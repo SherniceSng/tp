@@ -23,6 +23,9 @@ import seedu.address.model.wedding.Wedding;
 public class JsonSerializableAddressBook {
 
     public static final String MESSAGE_DUPLICATE_PERSON = "Persons list contains duplicate person(s).";
+    public static final String MESSAGE_DUPLICATE_PHONE = "Persons list contains duplicate phone number(s).";
+    public static final String MESSAGE_DUPLICATE_EMAIL = "Persons list contains duplicate email(s).";
+
     public static final String MESSAGE_DUPLICATE_WEDDING = "Weddings list contains duplicate wedding(s).";
     public static final String MESSAGE_CORRUPTED_WEDDING_DATA =
             "Address book data is corrupted: Found weddings without corresponding clients.";
@@ -109,9 +112,22 @@ public class JsonSerializableAddressBook {
         // Add persons
         for (JsonAdaptedPerson jsonAdaptedPerson : persons) {
             Person person = jsonAdaptedPerson.toModelType(addressBook.getWeddingList());
+
+            // Checks if same person
             if (addressBook.hasPerson(person)) {
                 throw new IllegalValueException(MESSAGE_DUPLICATE_PERSON);
             }
+
+            // Checks if same phone number
+            if (addressBook.hasPhone(person)) {
+                throw new IllegalValueException(MESSAGE_DUPLICATE_PHONE);
+            }
+
+            // Checks if same email
+            if (addressBook.hasEmail(person)) {
+                throw new IllegalValueException(MESSAGE_DUPLICATE_EMAIL);
+            }
+
             addressBook.addPerson(person);
         }
 
