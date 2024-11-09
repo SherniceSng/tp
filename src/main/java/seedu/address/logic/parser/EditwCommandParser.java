@@ -50,7 +50,7 @@ public class EditwCommandParser implements Parser<EditwCommand> {
         }
 
         if (!editWeddingDescriptor.isAnyFieldEdited()) {
-            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, EditwCommand.MESSAGE_USAGE));
+            throw new ParseException(EditwCommand.MESSAGE_NOT_EDITED);
         }
 
         return new EditwCommand(index, editWeddingDescriptor);

@@ -26,13 +26,15 @@ public class EditwCommand extends Command {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Edits the details of the wedding identified "
             + "by the index number used in the displayed wedding list. "
-            + "Existing values will be overwritten by the input values.\n"
+            + "Existing values will be overwritten by the input values. "
+            + "Ensure that you provide at least one field to edit.\n"
             + "Parameters: w/INDEX "
             + "[" + PREFIX_NAME + "NAME] "
             + "[" + PREFIX_DATE + "DATE] "
             + "[" + PREFIX_VENUE + "VENUE]\n"
             + "Example: " + COMMAND_WORD + " w/1 " + PREFIX_NAME + "Wedding2 " + PREFIX_DATE + "2024-11-01";
 
+    public static final String MESSAGE_NOT_EDITED = "At least one field to edit must be provided.";
     public static final String MESSAGE_EDIT_WEDDING_SUCCESS = "Edited Wedding: %1$s";
     public static final String MESSAGE_INVALID_WEDDING_INDEX = "The wedding index provided is invalid, please "
             + "enter an index that is between 1 and %1$d";
