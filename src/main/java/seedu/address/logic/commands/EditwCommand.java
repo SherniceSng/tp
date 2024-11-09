@@ -79,6 +79,7 @@ public class EditwCommand extends Command {
 
 
         model.setWedding(weddingToEdit, editedWedding);
+        model.refreshList(); // Refreshes the person and wedding list to original after successful command
         return new CommandResult(String.format(MESSAGE_EDIT_WEDDING_SUCCESS, Messages.format(editedWedding)));
     }
 

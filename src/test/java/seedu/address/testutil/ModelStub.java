@@ -153,4 +153,9 @@ public class ModelStub implements Model {
     public void updateFilteredWeddingListWithOwnWedding(Predicate<Wedding> predicate) {
         throw new AssertionError("This method should not be called.");
     }
+
+    @Override
+    public void refreshList() {
+        throw new AssertionError("This method should not be called.");
+    }
 }

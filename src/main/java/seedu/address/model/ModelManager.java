@@ -157,6 +157,13 @@ public class ModelManager implements Model {
         addressBook.setWedding(target, editedWedding);
     }
 
+    @Override
+    public void refreshList() {
+        updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
+        updateFilteredWeddingList(PREDICATE_SHOW_ALL_WEDDINGS);
+
+    }
+
     //=========== Filtered Person List Accessors =============================================================
 
     /**

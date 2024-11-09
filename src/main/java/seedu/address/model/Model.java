@@ -138,4 +138,5 @@ public interface Model {
     void updateFilteredWeddingList(Predicate<Wedding> predicate);
     void updateFilteredWeddingListWithOwnWedding(Predicate<Wedding> predicate);
     void setAllWeddingNotOwnWedding();
+    void refreshList();
 }

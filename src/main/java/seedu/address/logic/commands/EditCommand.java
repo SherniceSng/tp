@@ -119,7 +119,7 @@ public class EditCommand extends Command {
             model.updatePersonEditedWedding(ownWedding, editedWedding);
         }
 
-        model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
+        model.refreshList(); // Refreshes the person and wedding list to original after successful command
         return new CommandResult(String.format(MESSAGE_EDIT_PERSON_SUCCESS, Messages.format(editedPerson)));
     }
 

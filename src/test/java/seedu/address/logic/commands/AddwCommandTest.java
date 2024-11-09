@@ -316,6 +316,10 @@ public class AddwCommandTest {
             throw new AssertionError("This method should not be called.");
         }
 
+        @Override
+        public void refreshList() {
+            throw new AssertionError("This method should not be called.");
+        }
     }
 
     /**

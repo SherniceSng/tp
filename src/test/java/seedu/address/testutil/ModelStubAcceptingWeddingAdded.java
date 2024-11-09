@@ -28,6 +28,11 @@ public class ModelStubAcceptingWeddingAdded extends ModelStub {
     }
 
     @Override
+    public void refreshList() {
+        return;
+    }
+
+    @Override
     public void setWedding(Wedding target, Wedding editedWedding) {
         int index = weddingsAdded.indexOf(target);
         if (index != -1) {
